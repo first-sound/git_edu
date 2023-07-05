@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main(void)
 {
+    //ƒuƒ‰ƒ“ƒ`
     int n;
     int sum=1;
     printf("n=");
