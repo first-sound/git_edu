@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main(void)
 {
+    //“d‘ì
     int suuti1,suuti2,ans=1;
     char en;
 

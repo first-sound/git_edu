@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main (void)
 {
+    //”N—˜
     int nenri,shoki,jogen,toshi;
 
     printf("”N—˜(“)");

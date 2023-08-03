@@ -1,18 +1,20 @@
 #include<stdio.h>
+
 int main(void)
 {
-    int age;
-    printf("”N—î");
-    scanf("%d",&age);
-    if(age<=3){
-    printf("—cŽ™F–³—¿\n");}
+    //‘f””»’è
+    int suuti;
+    printf("”»’è‚µ‚½‚¢”Žš");
+    scanf(" %d",&suuti);
 
-    else if(age<=12){
-    printf("Žq‹ŸF‚T–œB\n");}
-
-    else{
-        printf("‘ålF‚T‰­");
+     for (int i = 2; i < suuti; i++)
+    {
+        if(suuti % i == 0)
+        {
+            printf("‘f”‚Å‚Í‚È‚¢");
+            return 0;
+        }
     }
-    
+    printf("‘f”");
     return 0;
 }

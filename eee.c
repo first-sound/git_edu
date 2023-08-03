@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main (void)
 {
+    //hogefuga‚Ì‚â‚Â
     int num;
     printf("nanban");
     scanf("%d",&num);

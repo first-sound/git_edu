@@ -1,6 +1,7 @@
 #include<stdio.h>
 int main(void)
 {
+    //–ÊÏ‚ÌŒvZ
     int zukei;
     double tehen,takasa,tate,yoko,ue,shita,r,kaku;
 

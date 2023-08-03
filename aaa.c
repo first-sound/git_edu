@@ -1,6 +1,11 @@
 #include <stdio.h>
 int main(void) {
-    double man1,man2,man3,score1,score2,score3,kadai,chukan,teiki,hyoA,hyoB,hyoC,score;
+    //単位
+    double man1,man2,man3;
+    double score1,score2,score3;
+    double kadai,chukan,teiki;
+    double hyoA,hyoB,hyoC;
+    double score;
 
     printf("課題、中間、定期の評価割合：");
     scanf(" %lf, %lf, %lf",&kadai,&chukan,&teiki);

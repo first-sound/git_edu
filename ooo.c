@@ -1,5 +1,7 @@
 #include<stdio.h>
 int main(void){
+    //フィボナッチ
+
     int suuti,mae=0,ato=1,sum;
     printf("nanban");
     scanf("%d",&suuti);
