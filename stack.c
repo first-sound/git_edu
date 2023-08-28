@@ -1,9 +1,14 @@
 #include <stdio.h>
 
+int i=0,sum=0,array[10000];
+
+int stack(void);
+int queue(void);
+int nyuryoku(int);
+
 int main(void)
 {
-    int suuti,i;
-    int array[10000];
+    int suuti;
 
     printf("スタック:1\nキュー:2\n");
     scanf("%d",&suuti);
@@ -13,10 +18,71 @@ int main(void)
         printf ("ないよ");
         return 0;
     }
-    
 
-    printf("入力してください\n");
-    for (i = 0; i < 10000; i++)
+    nyuryoku(suuti);
+
+    while(i < 10000){
+    printf("push:1\nenqueue:2\npop:3\ndequeue:4\nおわる:5\n:");
+    scanf("%d",&suuti);
+
+    switch (suuti)
+    {
+    case 5:
+        return 0;
+        break;
+    case 1:
+    case 2:
+        nyuryoku(suuti);
+        break;
+    case 3:
+        i = i - 1;
+        stack();
+        break;
+    case 4:
+        for ( int e = 0; e < i-1; e++)
+        {
+            array[e]=array[e+1];
+            printf("%d\n",array[e]);
+        }
+        i = i - 1;
+        break;
+
+    default:
+        printf("ないよ\n");
+        break;
+    }
+    }
+
+    return 0;
+}
+
+int stack()
+{
+    int m = i;
+    //スタック
+    for (int n = 0; n < m;)
+    {
+        m = m - 1;
+        printf("%d\n",array[m]);
+    }
+    return 0;
+        
+}
+int queue()
+{
+        //キュー
+    for ( int j = 0; j < i; j++)
+    {
+        printf("%d\n",array[j]);
+    }
+
+    return 0;
+}
+
+int nyuryoku(int suu)
+{
+       printf("入力してください\n");
+    while (i < 10000)
     {
         scanf("%d",&array[i]);
 
@@ -24,29 +90,14 @@ int main(void)
         {   
              break;
         }
+        i++;
     }
-    
-
-    if(suuti == 1)
+        if(suu==1)
     {
-        //スタック
-        for (int n = 0; n < i;)
-        {
-            i = i - 1;
-            printf("%d\n",array[i]);
-        }
-        
-        
+        stack();
     }
-    else if(suuti == 2)
+    else if(suu==2)
     {
-        //キュー
-        for ( int j = 0; j < i; j++)
-        {
-            printf("%d\n",array[j]);
-        }
-        
+        queue();
     }
-        
-    return 0;
 }
