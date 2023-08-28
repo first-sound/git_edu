@@ -4,7 +4,7 @@ int i=0,sum=0,array[10000];
 
 int stack(void);
 int queue(void);
-int nyuryoku(int);
+int nyuryoku(void);
 
 int main(void)
 {
@@ -19,38 +19,13 @@ int main(void)
         return 0;
     }
 
-    nyuryoku(suuti);
-
-    while(i < 10000){
-    printf("push:1\nenqueue:2\npop:3\ndequeue:4\nおわる:5\n:");
-    scanf("%d",&suuti);
-
-    switch (suuti)
+    if(suuti==1)
     {
-    case 5:
-        return 0;
-        break;
-    case 1:
-    case 2:
-        nyuryoku(suuti);
-        break;
-    case 3:
-        i = i - 1;
         stack();
-        break;
-    case 4:
-        for ( int e = 0; e < i-1; e++)
-        {
-            array[e]=array[e+1];
-            printf("%d\n",array[e]);
-        }
-        i = i - 1;
-        break;
-
-    default:
-        printf("ないよ\n");
-        break;
     }
+    else if(suuti==2)
+    {
+        queue();
     }
 
     return 0;
@@ -58,30 +33,105 @@ int main(void)
 
 int stack()
 {
-    int m = i;
-    //スタック
+    nyuryoku();
+    int m = i,kazu;
     for (int n = 0; n < m;)
     {
         m = m - 1;
         printf("%d\n",array[m]);
     }
+
+    while(i < 10000){
+    printf("push:1,pop:2,peek:3,size:4,おわる:5\n:");
+    scanf("%d",&kazu);
+
+    switch (kazu)
+    {
+    case 1:
+        nyuryoku();
+        m = i;
+        for (int n = 0; n < m;)
+        {
+            m = m - 1;
+            printf("%d\n",array[m]);
+        }
+        break;
+    case 2:
+        i = i - 1;
+        m = i;
+        for (int n = 0; n < m;)
+        {
+            m = m - 1;
+            printf("%d\n",array[m]);
+        }
+        break;
+    case 3:
+        printf("%d\n",array[i-1]);
+        break;
+    case 4:
+        printf("%d\n",i);
+        break;
+    case 5:
+        return 0;
+        break;
+    default:
+        printf("ないよ\n");
+        break;
+    }
+    }
     return 0;
-        
 }
+
 int queue()
 {
         //キュー
+    int kazu;
+    nyuryoku();
     for ( int j = 0; j < i; j++)
     {
         printf("%d\n",array[j]);
     }
+    while(i < 10000){
+    printf("enqueue:1,dequeue:2,peek:3,size:4,おわる:5\n:");
+    scanf("%d",&kazu);
 
+    switch (kazu)
+    {
+    case 1:
+        nyuryoku();
+        for ( int j = 0; j < i; j++)
+        {
+            printf("%d\n",array[j]);
+        }
+        break;
+    case 2:
+        for ( int e = 0; e < i-1; e++)
+        {
+            array[e]=array[e+1];
+            printf("%d\n",array[e]);
+        }
+        i = i - 1;
+        break;
+    case 3:
+        printf("%d\n",array[0]);
+        break;
+    case 4:
+        printf("%d\n",i);
+        break;
+    case 5:
+        return 0;
+        break;
+    default:
+        printf("ないよ\n");
+        break;
+    }
+    }
     return 0;
 }
 
-int nyuryoku(int suu)
+int nyuryoku()
 {
-       printf("入力してください\n");
+    printf("入力してください\n");
     while (i < 10000)
     {
         scanf("%d",&array[i]);
@@ -92,12 +142,6 @@ int nyuryoku(int suu)
         }
         i++;
     }
-        if(suu==1)
-    {
-        stack();
-    }
-    else if(suu==2)
-    {
-        queue();
-    }
+    return 0;
+    
 }
