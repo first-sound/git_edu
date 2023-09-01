@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int i=0,sum=0,array[10000];
+int i = 0,array[10000];
 
 int stack(void);
 int queue(void);
@@ -19,11 +19,11 @@ int main(void)
         return 0;
     }
 
-    if(suuti==1)
+    if(suuti == 1)
     {
         stack();
     }
-    else if(suuti==2)
+    else if(suuti == 2)
     {
         queue();
     }
@@ -57,12 +57,20 @@ int stack()
         }
         break;
     case 2:
-        i = i - 1;
-        m = i;
-        for (int n = 0; n < m;)
+        if(i == 0)
         {
-            m = m - 1;
-            printf("%d\n",array[m]);
+            printf("pop‚Å‚«‚È‚¢‚æ\n");
+        }
+        else
+        {
+            printf("%d‚ªpop‚³‚ê‚½‚æ\n\n",array[i-1]);
+            i = i - 1;
+            m = i;
+            for (int n = 0; n < m;)
+            {
+                m = m - 1;
+                printf("%d\n",array[m]);
+            }
         }
         break;
     case 3:
@@ -105,12 +113,20 @@ int queue()
         }
         break;
     case 2:
-        for ( int e = 0; e < i-1; e++)
+        if (i == 0)
         {
-            array[e]=array[e+1];
-            printf("%d\n",array[e]);
+            printf("pop‚Å‚«‚È‚¢‚æ\n");
         }
-        i = i - 1;
+        else
+        {
+            printf("%d‚ªpop‚³‚ê‚½‚æ\n\n",array[0]);
+            for ( int e = 0; e < i-1; e++)
+            {
+                array[e]=array[e+1];
+                printf("%d\n",array[e]);
+            }
+            i = i - 1;
+        }
         break;
     case 3:
         printf("%d\n",array[0]);
@@ -131,17 +147,18 @@ int queue()
 
 int nyuryoku()
 {
+    int count = sizeof(array) / sizeof(array[0]);
     printf("“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
-    while (i < 10000)
+    while (i < count)
     {
         scanf("%d",&array[i]);
 
         if(array[i] == -1)
         {   
-             break;
+             return 0;
         }
         i++;
     }
+    printf("‚à‚¤“ü‚ê‚ç‚ê‚Ü‚¹‚ñ\n");
     return 0;
-    
 }
